@@ -1,0 +1,31 @@
+package frc.robot.config;
+
+import com.ctre.phoenix6.configs.CANcoderConfiguration;
+import com.ctre.phoenix6.configs.TalonFXConfiguration;
+import com.ctre.phoenix6.swerve.SwerveDrivetrainConstants;
+import com.ctre.phoenix6.swerve.SwerveModuleConstants;
+
+import java.util.List;
+
+public interface RobotConstants {
+
+    SwerveDrivetrainConstants getSwerveDrivetrainConstants();
+
+    SwerveModuleConstants<TalonFXConfiguration, TalonFXConfiguration, CANcoderConfiguration>[] getModuleConstants();
+
+    PortConfiguration getPortConfiguration();
+
+    List<CameraConfiguration> getCameraConfigurations();
+
+    ArmConfiguration getArmConfiguration();
+
+    static RobotConstants getRobotConstants(RobotIdentity robot) {
+        switch (robot) {
+            case KRILLION:
+                return new Krillion();
+            default:
+                // Something went wrong if this branch is reached, by default we will return our Comp Bot
+                return new Krillion();
+        }
+    }
+}

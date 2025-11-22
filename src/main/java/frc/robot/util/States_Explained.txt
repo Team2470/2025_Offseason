@@ -1,0 +1,13 @@
+SuperstructureState       WristState                 ArmState            ElevatorState IntakeState ClimbState                 DriveState
+L4                  MOVE_TO_POSE(L4)         MOVE_TO_POSE(L4)         MOVE_TO_POSE(L4)        IDLE       IDLE                       IDLE
+L3                  MOVE_TO_POSE(L3)         MOVE_TO_POSE(L3)         MOVE_TO_POSE(L3)        IDLE       IDLE                       IDLE
+L2                  MOVE_TO_POSE(L2)         MOVE_TO_POSE(L2)         MOVE_TO_POSE(L2)        IDLE       IDLE                       IDLE
+L1                  MOVE_TO_POSE(L1)         MOVE_TO_POSE(L1)         MOVE_TO_POSE(L1)        IDLE       IDLE                       IDLE
+DriveAuto   MOVE_TO_POSE(DRIVE_POSE) MOVE_TO_POSE(DRIVE_POSE) MOVE_TO_POSE(DRIVE_POSE)        IDLE       IDLE          DRIVE_TO_POINT(x)
+DriveTele   MOVE_TO_POSE(DRIVE_POSE) MOVE_TO_POSE(DRIVE_POSE) MOVE_TO_POSE(DRIVE_POSE)        IDLE       IDLE                      INPUT
+HPIntake      MOVE_TO_POSE(HPINTAKE)   MOVE_TO_POSE(HPINTAKE)   MOVE_TO_POSE(HPINTAKE)        IDLE       IDLE  DRIVE_TO_POINT(HPSTATION)
+AlgaeL3       MOVE_TO_POSE(L3_ALGAE)   MOVE_TO_POSE(L3_ALGAE)   MOVE_TO_POSE(L3_ALGAE)        IDLE       IDLE                       IDLE
+AlgaeL2       MOVE_TO_POSE(L2_ALGAE)   MOVE_TO_POSE(L2_ALGAE)   MOVE_TO_POSE(L2_ALGAE)        IDLE       IDLE                       IDLE
+Processor    MOVE_TO_POSE(PROCESSOR)  MOVE_TO_POSE(PROCESSOR)  MOVE_TO_POSE(PROCESSOR)        IDLE       IDLE                       IDLE
+Net                MOVE_TO_POSE(NET)        MOVE_TO_POSE(NET)        MOVE_TO_POSE(NET)        IDLE       IDLE                       IDLE
+Climb               MOVE_TO_POSE(IN)         MOVE_TO_POSE(IN)       MOVE_TO_POSE(DOWN)        DROP      CLIMB                      INPUT
