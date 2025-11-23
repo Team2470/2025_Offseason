@@ -126,8 +126,6 @@ public class SwerveIOCTRE extends SwerveDrivetrain implements SwerveIO {
     @Override
     public void updateModuleInputs(ModuleIOInputsAutoLogged frontLeftInputs, ModuleIOInputsAutoLogged frontRightInputs,
             ModuleIOInputsAutoLogged backLeftInputs, ModuleIOInputsAutoLogged backRightInputs) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateModuleInputs'");
     }
 
 }

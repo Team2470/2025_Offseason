@@ -91,8 +91,6 @@ public class SwerveSubsystem extends SubsystemBase {
         public void updateModuleInputs(ModuleIOInputsAutoLogged frontLeftInputs,
                 ModuleIOInputsAutoLogged frontRightInputs, ModuleIOInputsAutoLogged backLeftInputs,
                 ModuleIOInputsAutoLogged backRightInputs) {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'updateModuleInputs'");
         }};
     private final CommandXboxController controller;
 

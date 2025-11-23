@@ -145,7 +145,7 @@ public class Krillion implements RobotConstants {
                 .withSteerFrictionVoltage(0.001)
                 .withDriveInertia(0.001)
                 .withSteerInertia(0.00001)
-                .withSlipCurrent(120) // TODO MEASURE
+                .withSlipCurrent(120) // TODO: MEASURE
                 .withFeedbackSource(SwerveModuleConstants.SteerFeedbackType.FusedCANcoder)
                 .withSpeedAt12Volts(MAX_SPEED_METERS_PER_SECOND)
                 .withWheelRadius(WHEEL_RADIUS_METERS);
@@ -177,7 +177,7 @@ public class Krillion implements RobotConstants {
                 .withSteerFrictionVoltage(0.001)
                 .withDriveInertia(0.001)
                 .withSteerInertia(0.00001)
-                .withSlipCurrent(120) // TODO MEASURE
+                .withSlipCurrent(120) // TODO: MEASURE
                 .withFeedbackSource(SwerveModuleConstants.SteerFeedbackType.FusedCANcoder)
                 .withSpeedAt12Volts(MAX_SPEED_METERS_PER_SECOND)
                 .withWheelRadius(WHEEL_RADIUS_METERS);
@@ -241,7 +241,7 @@ public class Krillion implements RobotConstants {
                 .withSteerFrictionVoltage(0.001)
                 .withDriveInertia(0.001)
                 .withSteerInertia(0.00001)
-                .withSlipCurrent(120) // TODO MEASURE
+                .withSlipCurrent(120) // TODO: MEASURE
                 .withFeedbackSource(SwerveModuleConstants.SteerFeedbackType.FusedCANcoder)
                 .withSpeedAt12Volts(MAX_SPEED_METERS_PER_SECOND)
                 .withWheelRadius(WHEEL_RADIUS_METERS);

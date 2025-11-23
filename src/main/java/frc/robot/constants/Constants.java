@@ -174,11 +174,11 @@ public final class Constants {
 
         // Distance from pivot point to arm base
         public static final double ARM_PIVOT_OFFSET =
-                Units.Meter.convertFrom(6.75 - 0.125, Units.Inch); // TODO UPDATE THIS
+                Units.Meter.convertFrom(6.75 - 0.125, Units.Inch); // TODO: UPDATE THIS
         // Distance from origin of robot to pivot point
         public static final Translation2d ORIGIN_PIVOT_OFFSET = new Translation2d(
                 -Units.Meter.convertFrom(10.25, Units.Inch),
-                Units.Meter.convertFrom(13.25, Units.Inch)); // TODO UPDATE THIS
+                Units.Meter.convertFrom(13.25, Units.Inch)); // TODO: UPDATE THIS
 
         public static final double SHOULDER_ZERO_VELOCITY_THRESHOLD_RADIANS_PER_SECOND = 0.08;
         public static final double WRIST_ZERO_VELOCITY_THRESHOLD_RADIANS_PER_SECOND = 0.03;
