@@ -72,8 +72,7 @@ public class RobotState {
         var ids = FieldConstants.isBlueAlliance()
                 ? Constants.ReefConstants.blueAllianceAngleToTagIDsMap.get(closest60Degrees)
                 : Constants.ReefConstants.redAllianceAngleToTagIDsMap.get(closest60Degrees);
-        Logger.recordOutput("RobotState/ValidTagIdsFromRotation/FrontID", ids.FRONT_ID);
-        Logger.recordOutput("RobotState/ValidTagIdsFromRotation/BackID", ids.BACK_ID);
+        Logger.recordOutput("RobotState/ValidTagIdsFromRotation/ID", ids.ID);
         return ids;
     }
 
@@ -114,26 +113,17 @@ public class RobotState {
                 ? Constants.ReefConstants.blueAllianceAngleToTagIDsMap
                 : Constants.ReefConstants.redAllianceAngleToTagIDsMap;
         var pairToReturn = Pair.of(Rotation2d.kZero, Constants.SuperstructureConstants.ScoringDirection.FRONT);
-        Rotation2d frontScoreRotation = new Rotation2d();
-        Rotation2d backScoreRotation = new Rotation2d();
+        Rotation2d scoreRotation = new Rotation2d();
 
         for (Map.Entry<Rotation2d, Constants.ReefConstants.ScoringCoralMappingRotationToTagID> entry :
                 mapToUse.entrySet()) {
-            if (entry.getValue().FRONT_ID == correctTagID) {
-                frontScoreRotation = entry.getKey();
-            } else if (entry.getValue().BACK_ID == correctTagID) {
-                backScoreRotation = entry.getKey();
+            if (entry.getValue().ID == correctTagID) {
+                scoreRotation = entry.getKey();
             }
         }
 
-        if (useFront) {
-            pairToReturn = Pair.of(frontScoreRotation, Constants.SuperstructureConstants.ScoringDirection.FRONT);
-        } else if (pose.getRotation().minus(backScoreRotation).getDegrees() >= -90
-                && pose.getRotation().minus(backScoreRotation).getDegrees() <= 90) {
-            pairToReturn = Pair.of(backScoreRotation, Constants.SuperstructureConstants.ScoringDirection.BACK);
-        } else {
-            pairToReturn = Pair.of(frontScoreRotation, Constants.SuperstructureConstants.ScoringDirection.FRONT);
-        }
+
+        pairToReturn = Pair.of(scoreRotation, Constants.SuperstructureConstants.ScoringDirection.FRONT);
         return pairToReturn;
     }
 
