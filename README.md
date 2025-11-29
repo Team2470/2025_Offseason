@@ -4,21 +4,39 @@ I (Josh) have decided to do this by reprogramming our 2025 robot, One in a Krill
 Here is progress so far:
 src\main\java\frc\robot\
   commands - Not touched yet
+  
   constants - Mostly base values from last year's robot, tuning would need to be done, as well as confirming port values
+  
   config - Again, mostly taken from base code, double checking would be required
+  
   subsystems
+  
     arm - 'Done' (as much as can be with robot)
+    
     climb - Not ready, just basic layout
+    
     drive - 'Done'
+    
     elevator - 'Done'
+    
     endEffector - Everything laid out, except for beambreaks for coral/algae detection
+    
     hpintake - Not ready, just basic layout
-    vision - QuestNavSubsytem.java is close to 'Done', Limelight vision is not ready
+    
+    vision - 'Done'
+    
   superstructure - gotten as far as I can without all subsystems implemented
+  
   util - Done
+  
   LocalADStarAK.java - Code from 1732 to use QuestNav with a pathfinder
+  
   Main.java - 'Done'
+  
   Robot.java - needs touching up with pathfinding and logging
+  
   RobotContainer.java - gotten as far as I can without all subsystems implemented
+  
   RobotState.java - Not really touched from 2910's code base
+  
   
