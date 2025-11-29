@@ -12,6 +12,9 @@ import frc.robot.subsystems.arm.shoulder.ShoulderIOTalonFX;
 import frc.robot.subsystems.arm.wrist.WristIOTalonFX;
 import frc.robot.subsystems.elevator.ElevatorIOTalonFX;
 import frc.robot.subsystems.elevator.ElevatorSubsystem;
+import frc.robot.subsystems.endEffector.EndEffectorIO;
+import frc.robot.subsystems.endEffector.EndEffectorIOTalonFX;
+import frc.robot.subsystems.endEffector.EndEffectorSubsystem;
 import frc.robot.subsystems.drive.SwerveIOCTRE;
 import frc.robot.subsystems.drive.SwerveSubsystem;
 import frc.robot.subsystems.vision.VisionIOLimelight;
@@ -50,6 +53,7 @@ public class RobotContainer {
     private final VisionSubsystem visionSubsystem;
     private final ArmSubsystem armSubsystem;
     private final ElevatorSubsystem elevatorSubsystem;
+    private final EndEffectorSubsystem endEffectorSubsystem;
     // TODO: The HP Intake and Climb subsystems are currently commented out as they have not been fully implemented
     // private final HPIntakeSubsystem hpIntakeSubsystem;
     // private final ClimbSubsystem climbSubsystem;
@@ -84,11 +88,14 @@ public class RobotContainer {
                 new WristIOTalonFX(constants.getPortConfiguration(), constants.getArmConfiguration()));
 
         // climbSubsystem = new ClimbSubsystem(new ClimberIOPhoenix6(constants.getPortConfiguration()));
-
+        endEffectorSubsystem = new EndEffectorSubsystem(
+            new EndEffectorIOTalonFX(constants.getPortConfiguration(), constants.getArmConfiguration())
+        );
         superstructure = new Superstructure(
                 swerveSubsystem,
                 elevatorSubsystem,
-                armSubsystem
+                armSubsystem,
+                endEffectorSubsystem
                 // climbSubsystem,
                 // hpIntakeSubsystem
                 );

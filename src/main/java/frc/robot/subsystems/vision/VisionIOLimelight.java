@@ -9,8 +9,9 @@ import edu.wpi.first.math.Pair;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation2d;
-import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.math.util.Units;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import frc.robot.RobotState;
 import frc.robot.config.CameraConfiguration;
 import frc.robot.constants.FieldConstants;
@@ -65,7 +66,7 @@ public class VisionIOLimelight implements VisionIO {
     }
 
     @Override
-    public synchronized void updateInputs(VisionIOInputs inputs) {
+    public void updateInputs(VisionIOInputs inputs) {
         inputs.horizontalAngleToTarget = Rotation2d.fromDegrees(txEntry.getDouble(0.0));
         inputs.hasTargets = validEntry.getDouble(0.0) == 1.0; // this was ty != 0 last year - double check
         inputs.tagId = (int) tagIdEntry.getDouble(-1);
@@ -205,4 +206,5 @@ public class VisionIOLimelight implements VisionIO {
     public String getLimelightName() {
         return limelightName;
     }
+
 }

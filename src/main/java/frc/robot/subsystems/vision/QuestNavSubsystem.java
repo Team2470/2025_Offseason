@@ -45,8 +45,10 @@ public class QuestNavSubsystem {
   // Pose of the robot when the pose was reset
   private Pose2d resetPoseRobot = new Pose2d();
 
-  private final Transform2d robotToQuest =
-      new Transform2d(inchesToMeters(0.5), inchesToMeters(9.207), Rotation2d.fromDegrees(90));
+  private final Transform2d robotToQuest = new Transform2d(
+        inchesToMeters(0.5),
+        inchesToMeters(9.207),
+        Rotation2d.fromDegrees(90));
 
   private final RollingAveragePose2d rollingAvg;
 

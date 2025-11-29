@@ -15,80 +15,81 @@ public class FieldConstants {
         FIELD_LAYOUT.setOrigin(AprilTagFieldLayout.OriginPosition.kBlueAllianceWallRightSide);
     }
 
-    public static final double FIELD_HEIGHT = 8.0518;
-    public static final double FIELD_LENGTH = 17.548249;
+    public static final double FIELD_HEIGHT                     =  8.0518;
+    public static final double FIELD_LENGTH                     = 17.548249;
 
     // April tag IDs
-    public static final int RED_LEFT_CORAL_STATION = 1;
-    public static final int RED_RIGHT_CORAL_STATION = 2;
-    public static final int RED_PROCESSOR = 3;
-    public static final int RED_RIGHT_NET = 4;
-    public static final int RED_LEFT_NET = 5;
-    public static final int RED_REEF_LEFT_DRIVER_STATION = 6;
-    public static final int RED_REEF_CENTER_DRIVER_STATION = 7;
-    public static final int RED_REEF_RIGHT_DRIVER_STATION = 8;
-    public static final int RED_REEF_RIGHT_BARGE = 9;
-    public static final int RED_REEF_CENTER_BARGE = 10;
-    public static final int RED_REEF_LEFT_BARGE = 11;
-    public static final int BLUE_RIGHT_CORAL_STATION = 12;
-    public static final int BLUE_LEFT_CORAL_STATION = 13;
-    public static final int BLUE_LEFT_BARGE = 14;
-    public static final int BLUE_RIGHT_BARGE = 15;
-    public static final int BLUE_PROCESSOR = 16;
-    public static final int BLUE_REEF_RIGHT_DRIVER_STATION = 17;
-    public static final int BLUE_REEF_CENTER_DRIVER_STATION = 18;
-    public static final int BLUE_REEF_LEFT_DRIVER_STATION = 19;
-    public static final int BLUE_REEF_RIGHT_BARGE = 20;
-    public static final int BLUE_REEF_CENTER_BARGE = 21;
-    public static final int BLUE_REEF_LEFT_BARGE = 22;
+    public static final int RED_LEFT_CORAL_STATION              = 1;
+    public static final int RED_RIGHT_CORAL_STATION             = 2;
+    public static final int RED_PROCESSOR                       = 3;
+    public static final int RED_RIGHT_NET                       = 4;
+    public static final int RED_LEFT_NET                        = 5;
+    public static final int RED_REEF_LEFT_DRIVER_STATION        = 6;
+    public static final int RED_REEF_CENTER_DRIVER_STATION      = 7;
+    public static final int RED_REEF_RIGHT_DRIVER_STATION       = 8;
+    public static final int RED_REEF_RIGHT_BARGE                = 9;
+    public static final int RED_REEF_CENTER_BARGE               = 10;
+    public static final int RED_REEF_LEFT_BARGE                 = 11;
+    public static final int BLUE_RIGHT_CORAL_STATION            = 12;
+    public static final int BLUE_LEFT_CORAL_STATION             = 13;
+    public static final int BLUE_LEFT_BARGE                     = 14;
+    public static final int BLUE_RIGHT_BARGE                    = 15;
+    public static final int BLUE_PROCESSOR                      = 16;
+    public static final int BLUE_REEF_RIGHT_DRIVER_STATION      = 17;
+    public static final int BLUE_REEF_CENTER_DRIVER_STATION     = 18;
+    public static final int BLUE_REEF_LEFT_DRIVER_STATION       = 19;
+    public static final int BLUE_REEF_RIGHT_BARGE               = 20;
+    public static final int BLUE_REEF_CENTER_BARGE              = 21;
+    public static final int BLUE_REEF_LEFT_BARGE                = 22;
 
-    public static final Translation2d RED_MARK_1 = new Translation2d(16.329, 2.197);
-    public static final Translation2d RED_MARK_2 = new Translation2d(16.329, 4.026);
-    public static final Translation2d RED_MARK_3 = new Translation2d(16.329, 5.855);
-    public static final Translation2d BLUE_MARK_1 = new Translation2d(1.219, 5.855);
-    public static final Translation2d BLUE_MARK_2 = new Translation2d(1.219, 4.026);
-    public static final Translation2d BLUE_MARK_3 = new Translation2d(1.219, 2.197);
+    public static final Translation2d RED_MARK_1                = new Translation2d(16.329, 2.197);
+    public static final Translation2d RED_MARK_2                = new Translation2d(16.329, 4.026);
+    public static final Translation2d RED_MARK_3                = new Translation2d(16.329, 5.855);
+    public static final Translation2d BLUE_MARK_1               = new Translation2d( 1.219, 5.855);
+    public static final Translation2d BLUE_MARK_2               = new Translation2d( 1.219, 4.026);
+    public static final Translation2d BLUE_MARK_3               = new Translation2d( 1.219, 2.197);
 
-    public static final Pose2d FAR_LEFT_STARTING_POSE_BLUE = new Pose2d(7.2, 7, Rotation2d.k180deg);
-    public static final Pose2d FAR_LEFT_STARTING_POSE_RED = new Pose2d(
-            FIELD_LENGTH - FAR_LEFT_STARTING_POSE_BLUE.getX(),
-            FIELD_HEIGHT - FAR_LEFT_STARTING_POSE_BLUE.getY(),
-            Rotation2d.kZero);
-    public static final Pose2d FAR_RIGHT_STARTING_POSE_BLUE = new Pose2d(
-            FAR_LEFT_STARTING_POSE_BLUE.getX(), FIELD_HEIGHT - FAR_LEFT_STARTING_POSE_BLUE.getY(), Rotation2d.k180deg);
-    public static final Pose2d FAR_RIGHT_STARTING_POSE_RED = new Pose2d(
-            FIELD_LENGTH - FAR_RIGHT_STARTING_POSE_BLUE.getX(),
-            FIELD_HEIGHT - FAR_RIGHT_STARTING_POSE_BLUE.getY(),
-            Rotation2d.kZero);
+    public static final Pose2d FAR_LEFT_STARTING_POSE_BLUE      = new Pose2d(7.2, 7, Rotation2d.k180deg);
+    public static final Pose2d FAR_LEFT_STARTING_POSE_RED       = new Pose2d(
+                                                                    FIELD_LENGTH - FAR_LEFT_STARTING_POSE_BLUE.getX(),
+                                                                    FIELD_HEIGHT - FAR_LEFT_STARTING_POSE_BLUE.getY(),
+                                                                    Rotation2d.kZero);
+    public static final Pose2d FAR_RIGHT_STARTING_POSE_BLUE     = new Pose2d(
+                                                                    FAR_LEFT_STARTING_POSE_BLUE.getX(),
+                                                                    FIELD_HEIGHT - FAR_LEFT_STARTING_POSE_BLUE.getY(),
+                                                                    Rotation2d.k180deg);
+    public static final Pose2d FAR_RIGHT_STARTING_POSE_RED      = new Pose2d(
+                                                                    FIELD_LENGTH - FAR_RIGHT_STARTING_POSE_BLUE.getX(),
+                                                                    FIELD_HEIGHT - FAR_RIGHT_STARTING_POSE_BLUE.getY(),
+                                                                    Rotation2d.kZero);
+    public static final Pose2d LEFT_STARTING_POSE_BLUE          = new Pose2d(7.2, 6.14, Rotation2d.fromDegrees(45.0));
+    public static final Pose2d LEFT_STARTING_POSE_RED           = new Pose2d(
+                                                                    FIELD_LENGTH - LEFT_STARTING_POSE_BLUE.getX(),
+                                                                    FIELD_HEIGHT - LEFT_STARTING_POSE_BLUE.getY(),
+                                                                    Rotation2d.fromDegrees(-135.0)); // todo red angles are wrong
+    public static final Pose2d RIGHT_STARTING_POSE_BLUE         = new Pose2d(
+                                                                    LEFT_STARTING_POSE_BLUE.getX(),
+                                                                    FIELD_HEIGHT - LEFT_STARTING_POSE_BLUE.getY(),
+                                                                    Rotation2d.fromDegrees(-45.0));
+    public static final Pose2d RIGHT_STARTING_POSE_RED          = new Pose2d(
+                                                                    FIELD_LENGTH - RIGHT_STARTING_POSE_BLUE.getX(),
+                                                                    FIELD_HEIGHT - RIGHT_STARTING_POSE_BLUE.getY(),
+                                                                    Rotation2d.fromDegrees(135.0)); // todo red angles are wrong
 
-    public static final Pose2d LEFT_STARTING_POSE_BLUE = new Pose2d(7.2, 6.14, Rotation2d.fromDegrees(45.0));
-    public static final Pose2d LEFT_STARTING_POSE_RED = new Pose2d(
-            FIELD_LENGTH - LEFT_STARTING_POSE_BLUE.getX(),
-            FIELD_HEIGHT - LEFT_STARTING_POSE_BLUE.getY(),
-            Rotation2d.fromDegrees(-135.0)); // todo red angles are wrong
-    public static final Pose2d RIGHT_STARTING_POSE_BLUE = new Pose2d(
-            LEFT_STARTING_POSE_BLUE.getX(),
-            FIELD_HEIGHT - LEFT_STARTING_POSE_BLUE.getY(),
-            Rotation2d.fromDegrees(-45.0));
-    public static final Pose2d RIGHT_STARTING_POSE_RED = new Pose2d(
-            FIELD_LENGTH - RIGHT_STARTING_POSE_BLUE.getX(),
-            FIELD_HEIGHT - RIGHT_STARTING_POSE_BLUE.getY(),
-            Rotation2d.fromDegrees(135.0)); // todo red angles are wrong
+    public static final Pose2d LEFT_STATION_PICKUP_POSE_BLUE    = new Pose2d(0.6, 7.85, Rotation2d.fromDegrees(135));
 
-    public static final Pose2d LEFT_STATION_PICKUP_POSE_BLUE = new Pose2d(0.6, 7.85, Rotation2d.fromDegrees(135));
-
-    public static final Pose2d LEFT_STATION_PICKUP_POSE_RED = new Pose2d(
-            FIELD_LENGTH - LEFT_STATION_PICKUP_POSE_BLUE.getX(),
-            FIELD_HEIGHT - LEFT_STATION_PICKUP_POSE_BLUE.getY(),
-            Rotation2d.fromDegrees(-55));
-    public static final Pose2d RIGHT_STATION_PICKUP_POSE_BLUE = new Pose2d(
-            LEFT_STATION_PICKUP_POSE_BLUE.getX(),
-            FIELD_HEIGHT - LEFT_STATION_PICKUP_POSE_BLUE.getY(),
-            Rotation2d.fromDegrees(-135));
-    public static final Pose2d RIGHT_STATION_PICKUP_POSE_RED = new Pose2d(
-            FIELD_LENGTH - RIGHT_STATION_PICKUP_POSE_BLUE.getX(),
-            FIELD_HEIGHT - RIGHT_STATION_PICKUP_POSE_BLUE.getY(),
-            Rotation2d.fromDegrees(55));
+    public static final Pose2d LEFT_STATION_PICKUP_POSE_RED     = new Pose2d(
+                                                                    FIELD_LENGTH - LEFT_STATION_PICKUP_POSE_BLUE.getX(),
+                                                                    FIELD_HEIGHT - LEFT_STATION_PICKUP_POSE_BLUE.getY(),
+                                                                    Rotation2d.fromDegrees(-55));
+    public static final Pose2d RIGHT_STATION_PICKUP_POSE_BLUE   = new Pose2d(
+                                                                    LEFT_STATION_PICKUP_POSE_BLUE.getX(),
+                                                                    FIELD_HEIGHT - LEFT_STATION_PICKUP_POSE_BLUE.getY(),
+                                                                    Rotation2d.fromDegrees(-135));
+    public static final Pose2d RIGHT_STATION_PICKUP_POSE_RED    = new Pose2d(
+                                                                    FIELD_LENGTH - RIGHT_STATION_PICKUP_POSE_BLUE.getX(),
+                                                                    FIELD_HEIGHT - RIGHT_STATION_PICKUP_POSE_BLUE.getY(),
+                                                                    Rotation2d.fromDegrees(55));
 
     public static boolean isBlueAlliance() {
         return DriverStation.getAlliance().orElse(DriverStation.Alliance.Blue) == DriverStation.Alliance.Blue;

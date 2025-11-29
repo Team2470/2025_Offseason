@@ -168,7 +168,6 @@ public final class Constants {
                 ReefFaces.IJ, 20,
                 ReefFaces.KL, 19);
     }
-
     public static final class ArmConstants {
         public static final double ZERO_VELOCITY_TIME_PERIOD = 0.5;
 
@@ -221,7 +220,6 @@ public final class Constants {
         public static final double SHOULDER_BUTTON_HOME_ANGLE_DEGREES = -0.5;
         public static final double WRIST_BUTTON_HOME_ANGLE_DEGREES = 134.74;
     }
-
     public static final class ClimberConstants {
         public static final double INTAKE_MOTOR_VOLTAGE = 12.0;
         public static final double REJECT_MOTOR_VOLTAGE = -12.0;
@@ -299,6 +297,21 @@ public final class Constants {
             return DriverStation.getAlliance().orElse(DriverStation.Alliance.Blue) == DriverStation.Alliance.Blue;
         }
 
+        public static final Translation2d MIDDLE_AUTO_START_BLUE = new Translation2d(
+            Units.Meter.convertFrom(7.100, Units.Meter),
+            Units.Meter.convertFrom(4.175, Units.Meter)
+        );
+
+        public static final Translation2d LEFT_AUTO_START_BLUE = new Translation2d(
+            Units.Meter.convertFrom(7.100, Units.Meter),
+            Units.Meter.convertFrom(5.100, Units.Meter)
+        );
+
+        public static final Translation2d RIGHT_AUTO_START_BLUE = new Translation2d(
+            Units.Meter.convertFrom(7.100, Units.Meter),
+            Units.Meter.convertFrom(3.100, Units.Meter)
+        );
+
         public static final Translation2d LEFT_HP_INTAKE_POSITION_BLUE = new Translation2d(
             Units.Meter.convertFrom(1.250, Units.Meter),
             Units.Meter.convertFrom(7.000, Units.Meter)
@@ -353,6 +366,21 @@ public final class Constants {
         );
         public static final Translation2d L_POST_POSITION_BLUE = new Translation2d(
             Units.Meter.convertFrom(3.650, Units.Meter),
+            Units.Meter.convertFrom(5.100, Units.Meter)
+        );
+
+        public static final Translation2d MIDDLE_AUTO_START_RED = new Translation2d(
+            Units.Meter.convertFrom(10.450, Units.Meter),
+            Units.Meter.convertFrom(3.850, Units.Meter)
+        );
+
+        public static final Translation2d LEFT_AUTO_START_RED = new Translation2d(
+            Units.Meter.convertFrom(10.450, Units.Meter),
+            Units.Meter.convertFrom(3.100, Units.Meter)
+        );
+
+        public static final Translation2d RIGHT_AUTO_START_RED = new Translation2d(
+            Units.Meter.convertFrom(10.450, Units.Meter),
             Units.Meter.convertFrom(5.100, Units.Meter)
         );
 
@@ -413,7 +441,9 @@ public final class Constants {
             Units.Meter.convertFrom(2.950, Units.Meter)
         );
 
-
+        public static final Translation2d MIDDLE_AUTO_START         = isBlueAlliance() ? MIDDLE_AUTO_START_BLUE                 : MIDDLE_AUTO_START_RED;
+        public static final Translation2d LEFT_AUTO_START           = isBlueAlliance() ? LEFT_AUTO_START_BLUE                   : LEFT_AUTO_START_RED;
+        public static final Translation2d RIGHT_AUTO_START          = isBlueAlliance() ? RIGHT_AUTO_START_BLUE                  : RIGHT_AUTO_START_RED;
         public static final Translation2d LEFT_HP_INTAKE_POSITION   = isBlueAlliance() ? LEFT_HP_INTAKE_POSITION_BLUE           : LEFT_HP_INTAKE_POSITION_RED;
         public static final Translation2d RIGHT_HP_INTAKE_POSITION  = isBlueAlliance() ? RIGHT_HP_INTAKE_POSITION_BLUE          : RIGHT_HP_INTAKE_POSITION_RED;
         public static final Translation2d A_POST_POSITION           = isBlueAlliance() ? A_POST_POSITION_BLUE                   : A_POST_POSITION_RED;
@@ -428,6 +458,7 @@ public final class Constants {
         public static final Translation2d J_POST_POSITION           = isBlueAlliance() ? J_POST_POSITION_BLUE                   : J_POST_POSITION_RED;
         public static final Translation2d K_POST_POSITION           = isBlueAlliance() ? K_POST_POSITION_BLUE                   : K_POST_POSITION_RED;
         public static final Translation2d L_POST_POSITION           = isBlueAlliance() ? L_POST_POSITION_BLUE                   : L_POST_POSITION_RED;
+        public static final Rotation2d    AUTO_START_ANGLE          = isBlueAlliance() ? Rotation2d.fromDegrees(180)    : Rotation2d.fromDegrees(0);
         public static final Rotation2d    LEFT_HP_INTAKE_ANGLE      = isBlueAlliance() ? Rotation2d.fromDegrees(-54)            : Rotation2d.fromDegrees(126);
         public static final Rotation2d    RIGHT_HP_INTAKE_ANGLE     = isBlueAlliance() ? Rotation2d.fromDegrees(54)     : Rotation2d.fromDegrees(-126);
         public static final Rotation2d    AB_FACE_ANGLE             = isBlueAlliance() ? Rotation2d.fromDegrees(0)      : Rotation2d.fromDegrees(180);
@@ -437,20 +468,23 @@ public final class Constants {
         public static final Rotation2d    IJ_FACE_ANGLE             = isBlueAlliance() ? Rotation2d.fromDegrees(-120)           : Rotation2d.fromDegrees(60);
         public static final Rotation2d    KL_FACE_ANGLE             = isBlueAlliance() ? Rotation2d.fromDegrees(-60)            : Rotation2d.fromDegrees(120);
 
-        public static final Pose2d LEFT_HP_INTAKE_POSE  = new Pose2d(LEFT_HP_INTAKE_POSITION, LEFT_HP_INTAKE_ANGLE);
-        public static final Pose2d RIGHT_HP_INTAKE_POSE = new Pose2d(RIGHT_HP_INTAKE_POSITION, RIGHT_HP_INTAKE_ANGLE);
-        public static final Pose2d A_POST_POSE          = new Pose2d(A_POST_POSITION, AB_FACE_ANGLE);
-        public static final Pose2d B_POST_POSE          = new Pose2d(B_POST_POSITION, AB_FACE_ANGLE);
-        public static final Pose2d C_POST_POSE          = new Pose2d(C_POST_POSITION, CD_FACE_ANGLE);
-        public static final Pose2d D_POST_POSE          = new Pose2d(D_POST_POSITION, CD_FACE_ANGLE);
-        public static final Pose2d E_POST_POSE          = new Pose2d(E_POST_POSITION, EF_FACE_ANGLE);
-        public static final Pose2d F_POST_POSE          = new Pose2d(F_POST_POSITION, EF_FACE_ANGLE);
-        public static final Pose2d G_POST_POSE          = new Pose2d(G_POST_POSITION, GH_FACE_ANGLE);
-        public static final Pose2d H_POST_POSE          = new Pose2d(H_POST_POSITION, GH_FACE_ANGLE);
-        public static final Pose2d I_POST_POSE          = new Pose2d(I_POST_POSITION, IJ_FACE_ANGLE);
-        public static final Pose2d J_POST_POSE          = new Pose2d(J_POST_POSITION, IJ_FACE_ANGLE);
-        public static final Pose2d K_POST_POSE          = new Pose2d(K_POST_POSITION, KL_FACE_ANGLE);
-        public static final Pose2d L_POST_POSE          = new Pose2d(L_POST_POSITION, KL_FACE_ANGLE);
+        public static final Pose2d MIDDLE_AUTO_START_POSE           = new Pose2d(MIDDLE_AUTO_START, AUTO_START_ANGLE);
+        public static final Pose2d LEFT_AUTO_START_POSE             = new Pose2d(LEFT_AUTO_START, AUTO_START_ANGLE);
+        public static final Pose2d RIGHT_AUTO_START_POSE            = new Pose2d(RIGHT_AUTO_START, AUTO_START_ANGLE);
+        public static final Pose2d LEFT_HP_INTAKE_POSE              = new Pose2d(LEFT_HP_INTAKE_POSITION, LEFT_HP_INTAKE_ANGLE);
+        public static final Pose2d RIGHT_HP_INTAKE_POSE             = new Pose2d(RIGHT_HP_INTAKE_POSITION, RIGHT_HP_INTAKE_ANGLE);
+        public static final Pose2d A_POST_POSE                      = new Pose2d(A_POST_POSITION, AB_FACE_ANGLE);
+        public static final Pose2d B_POST_POSE                      = new Pose2d(B_POST_POSITION, AB_FACE_ANGLE);
+        public static final Pose2d C_POST_POSE                      = new Pose2d(C_POST_POSITION, CD_FACE_ANGLE);
+        public static final Pose2d D_POST_POSE                      = new Pose2d(D_POST_POSITION, CD_FACE_ANGLE);
+        public static final Pose2d E_POST_POSE                      = new Pose2d(E_POST_POSITION, EF_FACE_ANGLE);
+        public static final Pose2d F_POST_POSE                      = new Pose2d(F_POST_POSITION, EF_FACE_ANGLE);
+        public static final Pose2d G_POST_POSE                      = new Pose2d(G_POST_POSITION, GH_FACE_ANGLE);
+        public static final Pose2d H_POST_POSE                      = new Pose2d(H_POST_POSITION, GH_FACE_ANGLE);
+        public static final Pose2d I_POST_POSE                      = new Pose2d(I_POST_POSITION, IJ_FACE_ANGLE);
+        public static final Pose2d J_POST_POSE                      = new Pose2d(J_POST_POSITION, IJ_FACE_ANGLE);
+        public static final Pose2d K_POST_POSE                      = new Pose2d(K_POST_POSITION, KL_FACE_ANGLE);
+        public static final Pose2d L_POST_POSE                      = new Pose2d(L_POST_POSITION, KL_FACE_ANGLE);
     }
 
     public static final class SysIdConstants {

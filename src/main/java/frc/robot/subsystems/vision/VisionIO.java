@@ -31,6 +31,4 @@ public interface VisionIO {
         public Rotation2d angleEncompassingTag;
         public Pose2d robotPoseBasedOffDistanceCalcAndTagLocation;
     }
-
-    void updateInputs(VisionIOInputsAutoLogged inputs);
 }

@@ -77,12 +77,14 @@ public class Superstructure {
 
     public Superstructure(  SwerveSubsystem swerveSubsystem,
                             ElevatorSubsystem elevatorSubsystem,
-                            ArmSubsystem armSubsystem
+                            ArmSubsystem armSubsystem,
+                            EndEffectorSubsystem endEffectorSubsystem
                             // ClimbSubsystem climbSubsystem,
                             /*HPIntakeSubsystem hpIntakeSubsystem*/) {
-        this.swerveSubsystem    = swerveSubsystem;
-        this.elevatorSubsystem  = elevatorSubsystem;
-        this.armSubsystem       = armSubsystem;
+        this.swerveSubsystem        = swerveSubsystem;
+        this.elevatorSubsystem      = elevatorSubsystem;
+        this.armSubsystem           = armSubsystem;
+        this.endEffectorSubsystem   = endEffectorSubsystem;
         // this.climbSubsystem     = climbSubsystem;
         // this.hpIntakeSubsystem  = hpIntakeSubsystem;
     }
@@ -146,9 +148,6 @@ public class Superstructure {
                 break;
             case REEF_ALGAE:
                 currentSuperState = CurrentSuperState.REEF_ALGAE;
-                break;
-            case SCORE_ALGAE:
-                currentSuperState = CurrentSuperState.SCORE_ALGAE;
                 break;
             default:
                 currentSuperState = CurrentSuperState.DRIVE;
@@ -302,9 +301,9 @@ public class Superstructure {
         if( elevatorSubsystem.getWantedElevatorHeight() == ElevatorConstants.L2_CORAL ||
             elevatorSubsystem.getWantedElevatorHeight() == ElevatorConstants.L3_CORAL ||
             elevatorSubsystem.getWantedElevatorHeight() == ElevatorConstants.L4_CORAL) {
-            endEffectorSubsystem.setWantedState(EndEffectorSubsystem.WantedState.OUTTAKING_CORAL);
+            endEffectorSubsystem.setWantedState(EndEffectorSubsystem.WantedState.OUTTAKE_CORAL);
         } else if (elevatorSubsystem.getWantedElevatorHeight() == ElevatorConstants.L1_CORAL) {
-            endEffectorSubsystem.setWantedState(EndEffectorSubsystem.WantedState.OUTTAKING_CORAL_L1);
+            endEffectorSubsystem.setWantedState(EndEffectorSubsystem.WantedState.OUTTAKE_CORAL_L1);
         } else {
             endEffectorSubsystem.setWantedState(EndEffectorSubsystem.WantedState.OUTTAKE_ALGAE);
         }
@@ -369,6 +368,14 @@ public class Superstructure {
         return setStateCommand(superState);
     }
 
+    public boolean hasCoral() {
+        return endEffectorSubsystem.hasCoral();
+    }
+
+    public boolean hasAlgae() {
+        return endEffectorSubsystem.hasAlgae();
+    }
+
     public Command configureButtonBindings(
         WantedSuperState hasCoralCondition,
         WantedSuperState hasAlgaeCondition,
@@ -378,8 +385,9 @@ public class Superstructure {
                     Commands.either(
                         setStateCommand(hasCoralCondition),
                         setStateCommand(hasAlgaeCondition),
-                        () -> hasCoral), // replace with actual condition checking for coral
+                        endEffectorSubsystem::hasCoral), // replace with actual condition checking for coral
                     setStateCommand(noGamePieceCondition),
-                    () -> !hasCoral || !hasAlgae);
+                    () -> !endEffectorSubsystem.hasCoral()
+                            || !endEffectorSubsystem.hasAlgae());
     }
 }

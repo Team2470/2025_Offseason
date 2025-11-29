@@ -6,7 +6,7 @@ import frc.robot.util.SubsystemDataProcessor;
 
 public interface HPIntakeIO extends SubsystemDataProcessor.IODataRefresher {
 
-    default void updateInputs(HPIntakeIOInputs inputs) {}
+    default void updateInputs(IntakeIOInputs inputs) {}
 
     @AutoLog
     class IntakeIOInputs {
